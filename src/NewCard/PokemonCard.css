@@ -1,22 +1,31 @@
-.card {
+.pokemonCard {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--bg-dark);
+  color: var(--muted);
+  border: 1px solid rgba(255, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 0;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+.pokemonCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.12) !important;
 }
 
-.pokemonImage {
-  height: 130px;
+.pokemonCard .card-img-top {
+  height: 120px;
   object-fit: contain;
 }
 
-.pokemonName {
-  font-weight: bold;
-  color: #fff;
+.pokemonCard .card-body {
+  background: transparent;
 }
 
 .pokemonNumber {
-  color: #ccc;
+  color: var(--primary-red);
+}
+
+.pokemonName {
+  font-weight: 700;
+  color: var(--muted);
 }

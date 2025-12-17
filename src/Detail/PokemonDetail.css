@@ -1,45 +1,45 @@
-/* PokemonDetail.css - Tema Rojo y Negro Intenso */
-
 .detailContainer {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  color: #ffffff;
+  color: var(--muted);
+  text-align: center;
 }
 
 .backButton {
-  background-color: #ff0000 !important;
+  background-color: var(--primary-red) !important;
   border: none !important;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.45);
+  transition: all 0.25s ease;
 }
 
 .backButton:hover {
   background-color: #cc0000 !important;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
-  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .pokemonTitle {
-  color: #ff0000;
-  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-  font-weight: bold;
+  color: var(--primary-red);
+  text-shadow: 0 0 18px rgba(255, 0, 0, 0.6);
+  font-weight: 800;
+  text-align: center;
 }
 
 .pokemonNumber {
-  color: #ff4444;
-  font-size: 1.8rem;
+  color: rgba(255, 68, 68, 0.95);
+  font-size: 1.4rem;
 }
 
 .mainImage {
-  max-height: 300px;
+  max-height: 320px;
   object-fit: contain;
-  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.6));
-  transition: transform 0.4s ease;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.55));
+  transition: transform 0.35s ease;
 }
 
 .mainImage:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .evolutionChain {
@@ -47,85 +47,94 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .evolutionCard {
-  transition: all 0.4s ease;
-  background-color: #1e1e1e !important;
+  transition: all 0.35s ease;
+  background-color: var(--bg-dark) !important;
   border: 2px solid transparent;
 }
 
 .evolutionCard:hover {
-  transform: translateY(-10px) scale(1.05);
-  border-color: #ff0000;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+  transform: translateY(-8px) scale(1.04);
+  border-color: var(--primary-red);
+  box-shadow: 0 0 22px rgba(255, 0, 0, 0.45);
 }
 
 .descriptionCard {
-  background-color: #1a1a1a !important;
-  border-left: 5px solid #ff0000;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-dark) !important;
+  border-left: 5px solid var(--primary-red);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
 }
 
 .descriptionText {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #eeeeee;
+  color: var(--muted);
 }
 
 .customTabs .nav-tabs {
-  border-bottom: 2px solid #ff0000;
+  border-bottom: 2px solid var(--primary-red);
 }
 
 .customTabs .nav-link {
-  color: #ffffff;
-  background-color: #222222;
+  color: var(--muted);
+  background-color: var(--muted-dark);
   border: none;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .customTabs .nav-link:hover {
-  color: #ff0000;
-  background-color: #333333;
+  color: var(--primary-red);
+  background-color: #2e2e2e;
 }
 
 .customTabs .nav-link.active {
   color: #ffffff !important;
-  background-color: #ff0000 !important;
+  background-color: var(--primary-red) !important;
   border: none;
-  box-shadow: 0 -4px 10px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 -4px 10px rgba(255, 0, 0, 0.35);
 }
 
 .tabContent {
-  background-color: #1e1e1e;
-  border: 1px solid #ff0000;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--primary-red);
   border-top: none;
-  padding: 25px;
-  min-height: 200px;
+  padding: 20px;
+  min-height: 180px;
 }
 
 .statItem {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--muted-dark);
 }
 
 .statName {
-  color: #ff6666;
-  font-weight: bold;
+  color: rgba(255, 120, 120, 0.95);
+  font-weight: 700;
 }
 
 .statValue {
-  color: #ff0000;
-  font-weight: bold;
+  color: var(--primary-red);
+  font-weight: 800;
 }
 
 /* Badge personalizado para tipos */
 .typeBadge {
   font-size: 1rem;
   padding: 8px 16px;
-  background-color: #ff0000 !important;
+  background-color: var(--primary-red) !important;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.detailContainer .row {
+  justify-content: center;
+}
+
+.detailContainer .btn {
+  background-color: var(--primary-red) !important;
+  border: none !important;
 }

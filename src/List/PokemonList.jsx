@@ -1,27 +1,52 @@
 import { useState, useEffect } from 'react'
 import { Row, Col, Spinner } from 'react-bootstrap'
-import PokemonCard from '../components/PokemonCard.jsx'
-import './PokemonList.css'  
+import PokemonCard from '../NewCard/PokemonCard.jsx'
+import './PokemonList.css'
 
-function PokemonList() {
+//Rangos de IDs por generación
+const GEN_RANGES = {
+  1: [1, 151],
+  2: [152, 251],
+  3: [252, 386],
+  4: [387, 493],
+  5: [494, 649],
+  6: [650, 721],
+  7: [722, 809],
+  8: [810, 898],
+  9: [899, 1008],
+}
+
+function PokemonList({ generation = 'all' }) {
   const [pokemons, setPokemons] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Cambia limit=151 cuando quieras toda la Gen 1. Usa 20 o 50 mientras desarrollas para que cargue rápido
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
-      .then((res) => res.json())
-      .then((data) => {
-        setPokemons(data.results)
+    setLoading(true)
+    if (generation === 'all') {
+      fetch('https://pokeapi.co/api/v2/pokemon?limit=1025')
+        .then((res) => res.json())
+        .then((data) => setPokemons(data.results))
+        .catch((err) => console.error('Error cargando Pokémon:', err))
+        .finally(() => setLoading(false))
+    } else {
+      const gid = Number(generation)
+      const range = GEN_RANGES[gid]
+      if (!range) {
+        setPokemons([])
         setLoading(false)
-      })
-      .catch((err) => {
-        console.error('Error cargando Pokémon:', err)
-        setLoading(false)
-      })
-  }, [])
+        return
+      }
+      const [min, max] = range
+      const offset = min - 1
+      const limit = max - min + 1
+      fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`)
+        .then((res) => res.json())
+        .then((data) => setPokemons(data.results))
+        .catch((err) => console.error('Error cargando generación:', err))
+        .finally(() => setLoading(false))
+    }
+  }, [generation])
 
-  // Pantalla de carga con estilo rojo/negro
   if (loading) {
     return (
       <div className="loadingContainer">
@@ -31,10 +56,9 @@ function PokemonList() {
     )
   }
 
-  // Lista principal
   return (
     <div className="pokemonGrid">
-      <Row xs={2} sm={3} md={4} lg={5} xl={6} className="g-4">
+      <Row sm={3} md={4} lg={5} xl={6} className="g-4">
         {pokemons.map((pokemon) => (
           <Col key={pokemon.name}>
             <PokemonCard pokemon={pokemon} />

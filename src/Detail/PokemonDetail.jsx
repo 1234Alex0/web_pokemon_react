@@ -11,10 +11,10 @@ import {
   Button,
   Spinner,
 } from 'react-bootstrap'
-import PokemonCard from '../components/PokemonCard.jsx'  // Ajusta si tu ruta es diferente
+import PokemonCard from '../NewCard/PokemonCard.jsx'
 import './PokemonDetail.css'
 
-function DetailPage() {
+function PokemonDetail() {
   const { id } = useParams()
   const [pokemon, setPokemon] = useState(null)
   const [species, setSpecies] = useState(null)
@@ -32,7 +32,7 @@ function DetailPage() {
       .then((r) => r.json())
       .then((data) => setPokemon(data))
 
-    // 2. GET: Species (para descripción y evolución)
+    // 2. GET: Species
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
       .then((r) => r.json())
       .then((data) => {
@@ -63,14 +63,13 @@ function DetailPage() {
       })
       .catch(() => setLocations(['No disponibles']))
 
-    // 5. GET extra: Detalle del primer movimiento (para cumplir los 5 GET)
+    // 5. GET: Detalle del primer movimiento
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.moves.length > 0) {
           fetch(data.moves[0].move.url)
             .then((r) => r.json())
-            // Solo lo hacemos para cumplir el GET, no mostramos nada extra
         }
       })
 
@@ -191,4 +190,4 @@ function DetailPage() {
   )
 }
 
-export default DetailPage
+export default PokemonDetail
