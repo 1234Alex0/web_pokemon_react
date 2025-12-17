@@ -1,0 +1,36 @@
+/* Estilos para la página de lista de Pokémon - Tema Rojo y Negro */
+
+.loadingContainer {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.loadingSpinner {
+  color: #ff0000;
+  border-color: #ff0000;
+  border-right-color: transparent;
+}
+
+.loadingText {
+  color: #ff4444;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.pokemonGrid {
+  padding: 20px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive: más columnas en pantallas grandes */
+@media (min-width: 576px) {
+  .pokemonGrid {
+    padding: 30px 0;
+  }
+}

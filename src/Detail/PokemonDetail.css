@@ -1,0 +1,131 @@
+/* PokemonDetail.css - Tema Rojo y Negro Intenso */
+
+.detailContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.backButton {
+  background-color: #ff0000 !important;
+  border: none !important;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #cc0000 !important;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+  transform: scale(1.05);
+}
+
+.pokemonTitle {
+  color: #ff0000;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.pokemonNumber {
+  color: #ff4444;
+  font-size: 1.8rem;
+}
+
+.mainImage {
+  max-height: 300px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.6));
+  transition: transform 0.4s ease;
+}
+
+.mainImage:hover {
+  transform: scale(1.1);
+}
+
+.evolutionChain {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.evolutionCard {
+  transition: all 0.4s ease;
+  background-color: #1e1e1e !important;
+  border: 2px solid transparent;
+}
+
+.evolutionCard:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #ff0000;
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+}
+
+.descriptionCard {
+  background-color: #1a1a1a !important;
+  border-left: 5px solid #ff0000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.descriptionText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #eeeeee;
+}
+
+.customTabs .nav-tabs {
+  border-bottom: 2px solid #ff0000;
+}
+
+.customTabs .nav-link {
+  color: #ffffff;
+  background-color: #222222;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.customTabs .nav-link:hover {
+  color: #ff0000;
+  background-color: #333333;
+}
+
+.customTabs .nav-link.active {
+  color: #ffffff !important;
+  background-color: #ff0000 !important;
+  border: none;
+  box-shadow: 0 -4px 10px rgba(255, 0, 0, 0.4);
+}
+
+.tabContent {
+  background-color: #1e1e1e;
+  border: 1px solid #ff0000;
+  border-top: none;
+  padding: 25px;
+  min-height: 200px;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.statName {
+  color: #ff6666;
+  font-weight: bold;
+}
+
+.statValue {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Badge personalizado para tipos */
+.typeBadge {
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: #ff0000 !important;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
